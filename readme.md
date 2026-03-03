@@ -1,42 +1,33 @@
-The Intelligent Eye: AI-Powered Navigation Aid
-The Intelligent Eye is a computer vision project designed to assist visually impaired individuals by detecting obstacles—specifically traffic lights—in real-time and providing descriptive audio feedback.
+🚦 Traffic Light Detector using YOLOv8
+This project is a real-time Traffic Light Detection and Classification system developed using the YOLOv8 (You Only Look Once) architecture. The model is trained to identify traffic light states and can be integrated into autonomous vehicle systems or smart city infrastructure.
 
-🚀 Key Features
-Real-time Detection: Utilizes the YOLOv8 Nano architecture for high-speed object detection on edge devices.
+🌟 Features
+Real-time Detection: High-speed processing using the lightweight YOLOv8 model.
 
-Audio Alerts: Integrated with pyttsx3 to provide voice notifications when a specific object (like a traffic light) is detected.
+State Classification: Detects Red, Green, and Yellow lights.
 
-CPU Optimized: Configured with a reduced image size (imgsz=320) to ensure smooth performance on standard laptops without a dedicated GPU.
+Voice Feedback: Includes audio cues for detected states (Red/Green/Yellow).
 
-Privacy Control: Includes a camera toggle feature to enable or disable the video feed during operation.
+Pre-trained Weights: Includes the custom-trained best.pt model file.
 
-🛠️ Architecture
-The project follows a Deep Learning Pipeline for Computer Vision:
+📁 Project Structure
+main.py: The primary script to run the detection system.
 
-Model: YOLOv8n (Nano).
+best.pt: The optimized YOLOv8 weights after training.
 
-Backbone: Modified CSPDarknet53 using C2f modules for efficient feature extraction.
+voice/: Folder containing audio files for voice notifications.
 
-Head: Decoupled, anchor-free detection head for precise classification and localization.
+dataset/: Training data sourced via Roboflow.
 
-Dataset: Custom "traffic-light-v9orl" dataset curated and versioned via Roboflow.
+🛠️ Requirements
+To run this project, you need the following dependencies:
 
-📦 Requirements
-To run this project locally, you will need:
+🚀 How to Run
+Clone the repository:
 
-Bash
-pip install ultralytics pyttsx3 opencv-python numpy
-💻 How to Run
-Ensure your trained model weights (best.pt) are in the project directory.
+Navigate to the project folder:
 
-Run the main script:
+Run the detector:
 
-Bash
-python main.py
-Controls:
-
-Press 'c' to toggle (enable/disable) the camera.
-
-Press 'q' to quit the application safely.
-
-I am a B.Tech Information Technology student (4th Semester) with a passion for building AI solutions that solve real-world problems. The Intelligent Eye represents my journey into Deep Learning, specifically focusing on Computer Vision and accessible technology.
+📊 Dataset
+The dataset was exported from Roboflow and includes pre-processed images of various traffic light conditions.
